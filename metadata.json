@@ -1,0 +1,6 @@
+{
+  "name": "Papandayan.id",
+  "description": "Platform pemesanan trip resmi Gunung Papandayan untuk Sunrise Trip, One Day Exploring, dan Camping di Garut.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,67 @@
+{
+  "entities": {
+    "Booking": {
+      "title": "Booking",
+      "description": "Papandayan mountain trip booking and reservation record",
+      "type": "object",
+      "properties": {
+        "booking_code": { "type": "string" },
+        "customer_name": { "type": "string" },
+        "customer_phone": { "type": "string" },
+        "customer_email": { "type": "string" },
+        "trip_package_id": { "type": "string" },
+        "participant_count": { "type": "number" },
+        "trip_schedule_date": { "type": "string" },
+        "meeting_point": { "type": "string" },
+        "total_amount": { "type": "number" },
+        "dp_amount": { "type": "number" },
+        "paid_amount": { "type": "number" },
+        "status": { "type": "string" },
+        "created_at": { "type": "string" },
+        "userId": { "type": "string" }
+      },
+      "required": ["booking_code", "customer_name", "customer_phone", "total_amount", "status"]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile authenticated via Firebase Auth",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "role": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    },
+    "FAQ": {
+      "title": "FAQ",
+      "description": "Frequently asked questions for Papandayan trip help center",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "question": { "type": "string" },
+        "answer": { "type": "string" },
+        "category": { "type": "string" },
+        "created_at": { "type": "string" },
+        "updated_at": { "type": "string" }
+      },
+      "required": ["id", "question", "answer"]
+    }
+  },
+  "firestore": {
+    "/bookings/{bookingId}": {
+      "schema": "Booking",
+      "description": "All trip bookings and reservations"
+    },
+    "/faqs/{faqId}": {
+      "schema": "FAQ",
+      "description": "Dynamic FAQ entries manageable by admins"
+    },
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile documents indexed by Firebase Auth UID"
+    }
+  }
+}
